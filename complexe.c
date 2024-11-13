@@ -2,11 +2,16 @@
 #include <math.h>           // Pour certaines fonctions trigo notamment
 
 // Implantations de reelle et imaginaire
-/** FONCTION reelle À IMPLANTER **/
-/** FONCTION imaginaire À IMPLANTER **/
-
+float reelle(complexe_t z){
+    return z.reelle;
+}
+float imaginaire(complexe_t z){
+    return z.imaginaire;
+}
 // Implantations de set_reelle et set_imaginaire
-/** PROCÉDURE set_reelle À IMPLANTER **/
+void set_reelle(complexe_t z, float x){
+    z.reelle = x;
+}
 /** PROCÉDURE set_imaginaire À IMPLANTER **/
 /** PROCÉDURE init À IMPLANTER **/
 
