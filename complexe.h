@@ -2,44 +2,116 @@
 #define COMPLEX_H
 
 // Type utilisateur complexe_t
-/** À COMPLÉTER **/
+struct complexe {
+    float reel;
+    float imaginaire;
+};
+typedef struct complexe complexe_t; 
 
 // Fonctions reelle et imaginaire
 /**
- * reelle
- *
- * CONTRAT À COMPLÉTER
- */
-/** FONCTION À DÉCLARER **/
+* reelle
+* Cette fonction renvoie la partie réelle d'un nombre complexe
+*
+* Paramètres :
+*  z     [in] complexe_t dont on veut la partie réelle
+*
+* Retour : float, la partie réelle
+*
+* Pré-conditions : 
+*   z non null
+*
+* Post-conditions :
+*   aucune
+*
+* Cas d'erreur : aucun
+*/
+float reelle(complexe_t z);
 
 /**
- * imaginaire
- *
- * CONTRAT À COMPLÉTER
- */
-/** FONCTION À DÉCLARER **/
+* imaginaire
+* Cette fonction renvoie la partie imaginaire d'un nombre complexe
+*
+* Paramètres :
+*  z     [in] complexe_t dont on veut la partie imaginaire
+*
+* Retour : float, la partie imaginaire
+*
+* Pré-conditions : 
+*   z non null
+*
+* Post-conditions :
+*   aucune
+*
+* Cas d'erreur : aucun
+*/
+float imaginaire(complexe_t z);
 
 // Procédures set_reelle, set_imaginaire et init
 /**
  * set_reelle
- *
- * CONTRAT À COMPLÉTER
+* Cette procédure modifie la partie reelle du nombre complexe donné avec le nombre réel
+donné
+*
+* Paramètres :
+*  z     [in out] complexe_t dont on veut changer la partie reelle
+*  x     [in] float, la nouvelle partie reelle
+*
+* Retour : Rien
+*
+* Pré-conditions : 
+*   z non null
+*
+* Post-conditions :
+*   z.reelle = x
+*
+* Cas d'erreur : aucun
  */
-/** PROCÉDURE À DÉCLARER **/
+void set_reelle(complexe_t z, float x);
 
 /**
  * set_imaginaire
- *
- * CONTRAT À COMPLÉTER
- */
-/** PROCÉDURE À DÉCLARER **/
+* Cette procédure modifie la partie imaginaire du nombre complexe donné avec le nombre réel
+donné
+*
+* Paramètres :
+*  z     [in out] complexe_t dont on veut changer la partie imaginaire
+*  x     [in] float, la nouvelle partie imaginaire
+*
+* Retour : Rien
+*
+* Pré-conditions : 
+*   z non null
+*
+* Post-conditions :
+*   z.imaginaire = x
+*
+* Cas d'erreur : aucun
+*/
+void set_imaginaire(complexe_t z, float x);
 
 /**
  * init
  *
- * CONTRAT À COMPLÉTER
- */
-/** PROCÉDURE À DÉCLARER **/
+* Cette procédure modifie la partie réelle et la partie imaginaire du nombre complexe donné
+avec les deux réels donné
+*
+* Paramètres :
+*  z     [in out] complexe_t dont on veut changer les composantes
+*  x     [in] float, la nouvelle partie réelle
+*  y     [in] float, la nouvelle partie imaginaire
+*
+* Retour : Rien
+*
+* Pré-conditions : 
+*   z non null
+*
+* Post-conditions :
+*   z.reelle = x
+*   z.imaginaire = y
+*
+*/
+void init(complexe_t z, float x, float y);
 
 // Procédure copie
 /**
