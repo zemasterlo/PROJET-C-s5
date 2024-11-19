@@ -3,7 +3,7 @@
 
 // Type utilisateur complexe_t
 struct complexe {
-    float reel;
+    float reelle;
     float imaginaire;
 };
 typedef struct complexe complexe_t; 
@@ -220,24 +220,47 @@ void puissance(complexe_t* resultat, complexe_t op, int exposant);
 // Module et argument
 /**
  * module_carre
+ * Calcule le carré du module du complexe donné en paramètre
  *
- * CONTRAT À COMPLETER
+ * Paramètres :
+ *   z              [in]  Complexe dont on veut le carré du module
+ * 
+ * Retour : float, le carré du module du complexe
+ *
+ * Pré-conditions : z non null
+ * Post-conditions : résultat positif
  */
-/** FONCTION À DÉCLARER **/
+float module_carre(complexe_t z);
 
 /**
  * module
+ * 
+ *  Calcule le module du complexe donné en paramètre
  *
- * CONTRAT À COMPLETER
+ * Paramètres :
+ *   z              [in]  Complexe dont on veut le module
+ *
+ * Retour : float, le module du complexe
+ *
+ * Pré-conditions : z non null
+ * Post-conditions : résultat positif
  */
-/** FONCTION À DÉCLARER **/
+float module(complexe_t z);
 
 /**
  * argument
  *
- * CONTRAT À COMPLETER
+ * Calcule l’argument du complexe donné en paramètre
+ * 
+ * Paramètres :
+ *   z              [in]  Complexe dont on veut l'argument
+ *
+ * Retour : float, l'argument du complexe
+ *
+ * Pré-conditions : z non null
+ * Post-conditions : resultat entre -pi et pi
  */
-/** FONCTION À DÉCLARER **/
+float argument(complexe_t z);
 
 
 #endif // COMPLEXE_H

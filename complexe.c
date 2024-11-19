@@ -12,24 +12,56 @@ float imaginaire(complexe_t z){
 void set_reelle(complexe_t z, float x){
     z.reelle = x;
 }
-/** PROCÉDURE set_imaginaire À IMPLANTER **/
-/** PROCÉDURE init À IMPLANTER **/
+
+void set_imaginaire(complexe_t z, float x){
+    z.imaginaire = x;
+}
+
+void init(complexe_t z, float x, float y){
+    set_reelle(z, x);
+    set_imaginaire(z, y);
+}
 
 // Implantation de copie
-/** PROCÉDURE copie À IMPLANTER */
+void copie(complexe_t* resultat, complexe_t autre){
+    *resultat = autre;
+}
 
 // Implantations des fonctions algébriques sur les complexes
-/** PROCÉDURE conjugue À IMPLANTER **/
-/** PROCÉDURE ajouter À IMPLANTER **/
-/** PROCÉDURE soustraire À IMPLANTER **/
-/** PROCÉDURE multiplier À IMPLANTER **/
-/** PROCÉDURE echelle À IMPLANTER **/
-
-/** PROCÉDURE puissance À IMPLANTER **/
-
+void conjugue(complexe_t* resultat, complexe_t op){
+    set_reelle(*resultat, reelle(op));
+    set_imaginaire(*resultat, -imaginaire(op));
+}
+void ajouter(complexe_t* resultat, complexe_t gauche, complexe_t droite){
+    set_reelle(*resultat, reelle(gauche) + reelle(droite));
+    set_imaginaire(*resultat, imaginaire(gauche) + imaginaire(droite));
+}
+void soustraire(complexe_t* resultat, complexe_t gauche, complexe_t droite){
+    set_reelle(*resultat, reelle(gauche) - reelle(droite)); 
+    set_imaginaire(*resultat, imaginaire(gauche) - imaginaire(droite));}
+void multiplier(complexe_t* resultat, complexe_t gauche, complexe_t droite){
+    set_reelle(*resultat, reelle(gauche) * reelle(droite) - imaginaire(gauche) * imaginaire(droite));
+    set_imaginaire(*resultat, reelle(gauche) * imaginaire(droite) + imaginaire(gauche) * reelle(droite));
+}
+void echelle(complexe_t* resultat, complexe_t op, double facteur){
+    set_reelle(*resultat, reelle(op) * facteur);
+    set_imaginaire(*resultat, imaginaire(op) * facteur);
+}
+void puissance(complexe_t* resultat, complexe_t op, int exposant){
+    *resultat = op;
+    for(int i = 1; i < exposant; i++){
+        multiplier(resultat, *resultat, op);
+    }
+}
 // Implantations du module et de l'argument
-/** FONCTION module_carre À IMPLANTER **/
-/** FONCTION module À IMPLANTER **/
-/** FONCTION argument À IMPLANTER **/
+module_carre(complexe_t z){
+    return reelle(z) * reelle(z) + imaginaire(z) * imaginaire(z);
+}
+module(complexe_t z){
+    return sqrt(module_carre(z));
+}
+argument(complexe_t z){
+    return atan(imaginaire(z)/ reelle(z));
+}
 
 
