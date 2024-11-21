@@ -1,6 +1,6 @@
 #include "complexe.h"
+#define _USE_MATH_DEFINES
 #include <math.h>           // Pour certaines fonctions trigo notamment
-#define M_PI 3.14159265358979323846
 
 // Implantations de reelle et imaginaire
 double reelle(complexe_t z){

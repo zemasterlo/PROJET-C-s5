@@ -2,11 +2,11 @@
 #define COMPLEX_H
 
 // Type utilisateur complexe_t
-struct complexe {
+struct complexe_t {
     double reelle;
     double imaginaire;
 };
-typedef struct complexe complexe_t; 
+typedef struct complexe_t complexe_t; 
 
 // Fonctions reelle et imaginaire
 /**
