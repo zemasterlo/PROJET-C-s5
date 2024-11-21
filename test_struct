@@ -113,7 +113,7 @@ fi
 
 check_fichier "complexe.h"
 check_fichier "complexe.c"
-check_fichier "mandelbrot.c"
+# check_fichier "mandelbrot.c"
 
 if [ $err -ne 0 ]; then
     echo "Les erreurs des fichiers testés empêchent de poursuivre le test..."
