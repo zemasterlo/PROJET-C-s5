@@ -49,11 +49,12 @@ void echelle(complexe_t* resultat, complexe_t op, double facteur){
 }
 void puissance(complexe_t* resultat, complexe_t op, int exposant){
     if (exposant==0){
-    init(resultat, 1,0);
+        init(resultat, 1,0);
+    }
+    else {
     copie(resultat, op);
     for(int i = 1; i < exposant; i++){
         multiplier(resultat, *resultat, op);
-    }
     }
 }
 // Implantations du module et de l'argument
@@ -64,6 +65,17 @@ double module(complexe_t z){
     return sqrt(module_carre(z));
 }
 double argument(complexe_t z){
+    // https://fr.wikipedia.org/wiki/Argument_d%27un_nombre_complexe
+    if (module_carre(z) == 0) return 0;
+    else if (imaginaire(z)==0 && reelle(z) < 0)
+    {
+        return M_PI;
+    }
+    else
+    {
+        return 2*atan(imaginaire(z)/(reelle(z)+sqrt(module_carre(z))));
+    }
+    
     return atan(imaginaire(z)/ reelle(z));
 }
 
