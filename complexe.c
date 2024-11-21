@@ -57,6 +57,7 @@ void puissance(complexe_t* resultat, complexe_t op, int exposant){
     for(int i = 1; i < exposant; i++){
         multiplier(resultat, *resultat, op);
     }
+    }
 }
 // Implantations du module et de l'argument
 double module_carre(complexe_t z){
