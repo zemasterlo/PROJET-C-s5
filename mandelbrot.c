@@ -17,13 +17,6 @@
 #include "mandelbrot.h"
 
 int mandelbrot(complexe_t z0, complexe_t c, double seuil, int maxit) {
-    complexe_t z = z0;
-    int i = 0;
-    while (z.re * z.re + z.im * z.im < seuil && i < maxit) {
-        z = z * z + c;
-        i++;
-    }
-    return i;
 }
 
 

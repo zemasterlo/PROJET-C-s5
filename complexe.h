@@ -3,8 +3,8 @@
 
 // Type utilisateur complexe_t
 struct complexe {
-    float reelle;
-    float imaginaire;
+    double reelle;
+    double imaginaire;
 };
 typedef struct complexe complexe_t; 
 
@@ -16,7 +16,7 @@ typedef struct complexe complexe_t;
 * Paramètres :
 *  z     [in] complexe_t dont on veut la partie réelle
 *
-* Retour : float, la partie réelle
+* Retour : double, la partie réelle
 *
 * Pré-conditions : 
 *   z non null
@@ -26,7 +26,7 @@ typedef struct complexe complexe_t;
 *
 * Cas d'erreur : aucun
 */
-float reelle(complexe_t z);
+double reelle(complexe_t z);
 
 /**
 * imaginaire
@@ -35,7 +35,7 @@ float reelle(complexe_t z);
 * Paramètres :
 *  z     [in] complexe_t dont on veut la partie imaginaire
 *
-* Retour : float, la partie imaginaire
+* Retour : double, la partie imaginaire
 *
 * Pré-conditions : 
 *   z non null
@@ -45,7 +45,7 @@ float reelle(complexe_t z);
 *
 * Cas d'erreur : aucun
 */
-float imaginaire(complexe_t z);
+double imaginaire(complexe_t z);
 
 // Procédures set_reelle, set_imaginaire et init
 /**
@@ -55,7 +55,7 @@ donné
 *
 * Paramètres :
 *  z     [in out] complexe_t dont on veut changer la partie reelle
-*  x     [in] float, la nouvelle partie reelle
+*  x     [in] double, la nouvelle partie reelle
 *
 * Retour : Rien
 *
@@ -67,7 +67,7 @@ donné
 *
 * Cas d'erreur : aucun
  */
-void set_reelle(complexe_t z, float x);
+void set_reelle(complexe_t z, double x);
 
 /**
  * set_imaginaire
@@ -76,7 +76,7 @@ donné
 *
 * Paramètres :
 *  z     [in out] complexe_t dont on veut changer la partie imaginaire
-*  x     [in] float, la nouvelle partie imaginaire
+*  x     [in] double, la nouvelle partie imaginaire
 *
 * Retour : Rien
 *
@@ -88,7 +88,7 @@ donné
 *
 * Cas d'erreur : aucun
 */
-void set_imaginaire(complexe_t z, float x);
+void set_imaginaire(complexe_t z, double x);
 
 /**
  * init
@@ -98,8 +98,8 @@ avec les deux réels donné
 *
 * Paramètres :
 *  z     [in out] complexe_t dont on veut changer les composantes
-*  x     [in] float, la nouvelle partie réelle
-*  y     [in] float, la nouvelle partie imaginaire
+*  x     [in] double, la nouvelle partie réelle
+*  y     [in] double, la nouvelle partie imaginaire
 *
 * Retour : Rien
 *
@@ -111,7 +111,7 @@ avec les deux réels donné
 *   z.imaginaire = y
 *
 */
-void init(complexe_t z, float x, float y);
+void init(complexe_t z, double x, double y);
 
 // Procédure copie
 /**
@@ -225,12 +225,12 @@ void puissance(complexe_t* resultat, complexe_t op, int exposant);
  * Paramètres :
  *   z              [in]  Complexe dont on veut le carré du module
  * 
- * Retour : float, le carré du module du complexe
+ * Retour : double, le carré du module du complexe
  *
  * Pré-conditions : z non null
  * Post-conditions : résultat positif
  */
-float module_carre(complexe_t z);
+double module_carre(complexe_t z);
 
 /**
  * module
@@ -240,12 +240,12 @@ float module_carre(complexe_t z);
  * Paramètres :
  *   z              [in]  Complexe dont on veut le module
  *
- * Retour : float, le module du complexe
+ * Retour : double, le module du complexe
  *
  * Pré-conditions : z non null
  * Post-conditions : résultat positif
  */
-float module(complexe_t z);
+double module(complexe_t z);
 
 /**
  * argument
@@ -255,12 +255,12 @@ float module(complexe_t z);
  * Paramètres :
  *   z              [in]  Complexe dont on veut l'argument
  *
- * Retour : float, l'argument du complexe
+ * Retour : double, l'argument du complexe
  *
  * Pré-conditions : z non null
  * Post-conditions : resultat entre -pi et pi
  */
-float argument(complexe_t z);
+double argument(complexe_t z);
 
 
 #endif // COMPLEXE_H
