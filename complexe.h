@@ -67,7 +67,7 @@ donné
 *
 * Cas d'erreur : aucun
  */
-void set_reelle(complexe_t z, double x);
+void set_reelle(complexe_t* z, double x);
 
 /**
  * set_imaginaire
@@ -88,7 +88,7 @@ donné
 *
 * Cas d'erreur : aucun
 */
-void set_imaginaire(complexe_t z, double x);
+void set_imaginaire(complexe_t* z, double x);
 
 /**
  * init
@@ -111,7 +111,7 @@ avec les deux réels donné
 *   z.imaginaire = y
 *
 */
-void init(complexe_t z, double x, double y);
+void init(complexe_t* z, double x, double y);
 
 // Procédure copie
 /**
