@@ -15,14 +15,12 @@
 // mandelbrot - Copyright (c) 2023 Guillaume Dupont
 // Contact: <guillaume.dupont@toulouse-inp.fr>
 #include "mandelbrot.h"
-#include <stdio.h>
-#include <math.h>
 
 int mandelbrot(complexe_t z0, complexe_t c, double seuil, int maxit) {
     complexe_t z;
     copie(&z, z0);
     int i = 0;
-    while (i < maxit && fabs(module(z) - seuil) < 1e-6)
+    while (i < maxit && module(z) - seuil < 1e-6)
     {
         puissance(&z, z, 2);
         ajouter(&z, z, c);
